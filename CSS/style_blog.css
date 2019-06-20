@@ -1,0 +1,303 @@
+/* Declaração de fontes customizadas */
+@font-face { font-family: Compagnon; src: "../font/Compagnon-Roman.otf"; } 
+@font-face { font-family: Compagnon-bold; src: "../font/Compagnon-Bold.otf"; } 
+
+body {
+    height: 100%;
+    background-color: #677275;
+    background-image: url('../imagens/BG.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+
+    .container {
+        display: grid;
+        grid-gap: 10px 10px;
+        grid-template-columns: 300px 1fr 100px 200px;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "TL T TR"
+            "B B R"
+            "B2 B2 R"
+            "L L R"
+            "L2 L2 R2"
+    }
+    /* ESTILIZAÇÃO DE BOTÕES*/
+    .botnav1 {
+        font-family: Compagnon;
+        background-color: #4A605E;
+        color: white;
+        padding: 23px 41px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .botnav1:hover {
+        font-family: Compagnon;
+        background-color: #4A605E;
+        color: white;
+        text-shadow: 3px 2px rgb(34, 34, 34);
+        border: 2px solid rgb(50, 61, 60);
+        padding: 21px 39px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .botnav2 {
+        font-family: Compagnon;
+        background-color: #4A605E;
+        color: white;
+        padding: 15px 18px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .botnav2:hover {
+        font-family: Compagnon;
+        background-color: #4A605E;
+        color: white;
+        text-shadow: 3px 2px rgb(34, 34, 34);
+        border: 2px solid rgb(50, 61, 60);
+        padding: 13px 16px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .botnav3 {
+        font-family: Compagnon;
+        background-color: #4A605E;
+        color: white;
+        padding: 23px 38px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .botnav3:hover {
+        font-family: Compagnon;
+        background-color: #4A605E;
+        color: white;
+        text-shadow: 3px 2px rgb(34, 34, 34);
+        border: 2px solid rgb(50, 61, 60);
+        padding: 21px 36px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .botnav4 {
+        font-family: Compagnon;
+        background-color: #4A605E;
+        color: white;
+        padding: 23px 38px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .botnav4:hover {
+        font-family: Compagnon;
+        background-color: #4A605E;
+        color: white;
+        text-shadow: 3px 2px rgb(34, 34, 34);
+        border: 2px solid rgb(50, 61, 60);
+        padding: 21px 36px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .botnav5 {
+        font-family: Compagnon;
+        background-color: #4A605E;
+        color: white;
+        padding: 23px 38px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .botnav5:hover {
+        font-family: Compagnon;
+        background-color: #4A605E;
+        color: white;
+        text-shadow: 3px 2px rgb(34, 34, 34);
+        border: 2px solid rgb(50, 61, 60);
+        padding: 21px 36px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .botnav6 {
+        font-family: Compagnon;
+        background-color: #4A605E;
+        color: white;
+        padding: 23px 38px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+    .botnav6:hover {
+        font-family: Compagnon;
+        background-color: #4A605E;
+        color: white;
+        text-shadow: 3px 2px rgb(34, 34, 34);
+        border: 2px solid rgb(50, 61, 60);
+        padding: 21px 36px;
+        margin: 10px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+
+    .imagem1 {
+        grid-area: T;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 25px;
+        background-color: #FFFFF0;
+        border: 5px solid #4A605E;       
+    }
+
+    .barra1 {
+        grid-area: B;
+        background-color: rgb(44, 59, 58);
+        padding-bottom: 25px;
+        margin-bottom: -10px;
+        width: 100%;
+    }
+    .barra2 {
+        grid-area: B2;
+        background-color: #4A605E;
+        padding-bottom: 25px;
+        width: 100%;
+    }
+    .getnews {
+        grid-area: T;
+        margin-top: 100px;
+        padding-left: 8px;
+        padding-right: 8px;
+        justify-self: center;
+        border: 1px solid rgb(50,50,50);
+        background-color: #FFFFF0;
+        font-family: "Compagnon";
+        border-radius: 25px;
+    }
+    .getnews:hover {
+        grid-area: T;
+        margin-top: 100px;
+        padding-left: 8px;
+        padding-right: 8px;
+        justify-self: center;
+        border: 1px solid rgb(50,50,50);
+        background-color: #FFFFF0;
+        font-family: "Compagnon";
+        border-radius: 25px;
+        font-weight: bold;
+        text-decoration: overline underline;
+    }    
+    .login {
+        grid-area: TR2;
+        border: 1px solid rgb(50,50,50);
+        text-align: center;
+        font-family: "Compagnon";
+        background-color: #FFFFF0;
+    }
+    /* ESTILOS PARA NOTICIAS*/
+    #blogpost {
+        margin-top: -10px;
+        grid-area: L;
+        width: auto;
+        background-color: #FFFFF0;
+        border-bottom: 20px solid #4A605E;        
+    }
+    #postar {
+        margin-top: -10px;
+        grid-area: L;
+        width: auto;
+        background-color: #FFFFF0;
+        border-bottom: 20px solid #4A605E;        
+    }
+    .blog-titulo {
+        font-size: 150%;
+        font-family: "Compagnon-bold";
+        text-align: center;
+        text-shadow: 3px 2px gainsboro;
+    }
+    .blog-subtitulo {
+        font-size: 120%;
+        font-family: "Compagnon";
+        margin: 30px;
+        text-align: justify;
+        padding-bottom: 20px;   
+    }
+    .blog-post {
+        font-family: "Compagnon";
+        text-align: justify;
+        margin-left: 30px;
+        margin-right: 30px;
+        padding-bottom: 50px;  
+    }
+    .blog-img {
+        padding-left: 550px;
+    }
+    .noti-link {
+        font-family: "Compagnon";
+        padding-bottom: 70px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    /* FIM DE ESTILOS PARA NOTICIAS */
+    .notinav{
+        grid-area: R;
+        width: auto;
+        height: auto;
+        font-family: "Compagnon";
+        background-color: #FFFFF0;
+        padding-right: 300px;
+        padding-left: 5px;
+        border-bottom: 20px solid #4A605E;      
+        border-top: 25px solid rgb(44, 59, 58);      
+    }
+    #destaque {
+        padding-left: 15px;
+    }
+    .notinav_mobi{
+        display: none;
+    }
+
+    /*início da estilização de caixa de comentários*/
+    #dtext{
+        grid-area: L2;
+        font-family: "Compagnon";
+        background-color: #FFFFF0;
+        padding: 10px;
+        border-bottom: 20px solid #4A605E;      
+        border-top: 25px solid rgb(44, 59, 58);      
+    }
+    .caixacomment {
+        grid-area: L2;
+        margin-top: 10px;
+        font-family: "Compagnon";
+        background-color: #FFFFF0;
+        padding: 10px;
+        border-bottom: 20px solid #4A605E;      
+        border-top: 25px solid rgb(44, 59, 58);      
+    }
+    #like {
+        margin-bottom:-500px;
+    }

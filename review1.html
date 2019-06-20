@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!--cabeçário-->
+<head>
+    <title>Página inicial</title>
+    <meta http-equiv="cache-control"content="no-store">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="html, web, noticias, PUC">
+    <meta name="author" content="Vítor Passos">
+    <meta name="description" content="Website de DIW">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style_blog.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="../javascript/dbfake.js"></script>
+</head>
+
+<body onload="init()">
+    <div class="container">
+        <div class="item imagem1">
+            <!--logo temporário-->
+            <img width="280" src="../imagens/dotwebsite.png" alt="placeholder">
+        </div>
+    </div>
+
+    <div class="container">
+        <!--esse div está recebendo dados do script no final deste documento-->
+        <div id="blogpost"></div>
+
+        <div class="item barra1"></div>
+        <div class="item barra2"></div>
+
+        <div class="item notinav">
+        <table>
+            <tr>
+                <td><button class="botnav1" onclick="window.location.href='../index.html'">Início</button></td>
+                <td><button class="botnav2" onclick="window.location.href='../postar.html'">Criar nova postagem</button></td>
+            </tr>
+            <tr>
+                <td><button class="botnav3">Lorem</button></td>
+                <td><button class="botnav4">Lorem</button></td>
+            </tr>
+            <tr>
+                <td><button class="botnav5">Lorem</button></td>
+                <td><button class="botnav6">Lorem</button></td>
+            </tr>
+        </table>
+        </div>
+    
+    </div>
+
+        
+    <div id="dtext">
+        <h4>Escrever um comentário</h4>
+        <form id="form-contato">
+            <div class="form-group row">
+                <div class="col-sm-8">
+                    <label for="inputNome">Nome</label>
+                    <input type="text" class="form-control" id="inputNome">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-5">
+                    <label for="inputComentario">Comentário</label>
+                    <input type="text" class="form-control" id="inputComentario">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-12">
+                    <input type="button" id="btnInsert" value="Comentar">
+                </div>
+            </div>
+        </form>
+        <h4>Curtir</h4>
+        <button type ="button" onClick="addlike()" id="like"><img src="../imagens/facebook-like--v1.png" alt="like" style="width:25px;height:25px;"><a id="clicks">0</a></button>
+    </div>
+
+    <div class="caixacomment">
+        <h4>Comentários de outros usuários</h4>
+        <div id="cmtlist"></div>
+    </div>
+
+<script>
+    var path = window.location.pathname;
+    var page = path.split("/").pop();
+    var id = page.charAt(6);
+
+    function exibeComs() {
+            // Remove todas as linhas do corpo da tabela
+            document.getElementById('cmtlist').innerHTML = '';
+
+            // Popula a tabela com os registros do banco de dados
+            var comenta = '';
+            for (i=1; i < db.blogposts[id].comentarios.length; i++) {
+            comenta += `<p class = "com-nome"><b>${ db.blogposts[id].comentarios[i].nome }</b> diz...<br><br>
+                        <p class = "com-post">• ${ db.blogposts[id].comentarios[i].comentario } <br><br>`;
+            document.getElementById('cmtlist').innerHTML = comenta;
+            }
+        }
+
+    var posta = '';
+    posta += `<p class = "blog-titulo">${ db.blogposts[id].titulo } </p>
+              <p class = "blog-post">${ db.blogposts[id].post } <br><br>
+              <p class = "blog-img">${ db.blogposts[id].imagem } <br><br>`;
+    document.getElementById('blogpost').innerHTML = posta;
+
+
+    function init() {
+            // Adiciona funções para tratar os eventos 
+            $("#btnInsert").click(function () {
+
+                // Obtem os valores dos campos do formulário
+                let campoNome = $("#inputNome").val();
+                let campoComentario = $("#inputComentario").val();
+                let comentario = { k: id, nome: campoNome, comentario: campoComentario };
+
+                insertComentario(comentario);
+
+                // Limpa o formulario
+                $("#form-contato")[0].reset();
+
+                exibeComs(comentario);
+            });
+
+                        // Popula a tabela com os registros do banco de dados
+                        var comenta = '';
+            for (i=1; i < db.blogposts[id].comentarios.length; i++) {
+            comenta += `<p class = "com-nome"><b>${ db.blogposts[id].comentarios[i].nome }</b> diz...<br><br>
+                        <p class = "com-post">• ${ db.blogposts[id].comentarios[i].comentario } <br><br>`;
+            document.getElementById('cmtlist').innerHTML = comenta;
+            }
+    }
+</script>
+
+</body>
+</html>
